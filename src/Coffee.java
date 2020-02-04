@@ -1,7 +1,7 @@
 public class Coffee {
 public static int milkUsed;
 public static int beansUsed;
-public CoffeeType coffeeType;
+public static CoffeeType coffeeType;
 
     public int getMilk(){
         return milkUsed;
@@ -11,8 +11,6 @@ public CoffeeType coffeeType;
         return beansUsed;
     }
 
-    public CoffeeType getType(){
-        return coffeeType;
-    }
+    public CoffeeType getType(){ return coffeeType; }
 
 }

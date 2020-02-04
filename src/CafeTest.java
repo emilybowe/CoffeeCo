@@ -19,4 +19,20 @@ public class CafeTest {
         Assert.assertEquals(CoffeeType.Espresso, coffee.getType());
     }
 
+    @Test
+    public void brewingEspressoConsumesBeans(){
+
+        //given
+        Cafe cafe = new Cafe();
+        cafe.restockBeans(7);
+
+        //when
+        Coffee coffee = cafe.Brew(CoffeeType.Espresso);
+
+        //then
+        Assert.assertEquals(0, cafe.beansStock);
+    }
+
+
+
 }
