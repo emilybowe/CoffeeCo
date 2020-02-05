@@ -8,14 +8,14 @@ public class CafeTest {
 
         //given
         Cafe cafe = new Cafe();
-        cafe.restockBeans(7);
+        cafe.restockBeans(Cafe.ESPRESSO_BEANS_SINGLE_SHOT);
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
 
         //then
         Assert.assertEquals(0, coffee.getMilk());
-        Assert.assertEquals(7, coffee.getBeans());
+        Assert.assertEquals(Cafe.ESPRESSO_BEANS_SINGLE_SHOT, coffee.getBeans());
         Assert.assertEquals(CoffeeType.Espresso, coffee.getType());
     }
 
@@ -24,7 +24,7 @@ public class CafeTest {
 
         //given
         Cafe cafe = new Cafe();
-        cafe.restockBeans(7);
+        cafe.restockBeans(Cafe.ESPRESSO_BEANS_SINGLE_SHOT);
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
@@ -39,7 +39,7 @@ public class CafeTest {
 
         //given
         Cafe cafe = new Cafe();
-        cafe.restockBeans(7);
+        cafe.restockBeans(Cafe.ESPRESSO_BEANS_SINGLE_SHOT);
         //cafe.restockMilk(7);
 
         //when
