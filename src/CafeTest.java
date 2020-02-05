@@ -1,13 +1,21 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CafeTest {
+
+    private Cafe cafe;
+
+    @Before
+    public void before(){
+        cafe = new Cafe();
+    }
 
     @Test
     public void canBrewEspresso(){
 
         //given
-        Cafe cafe = cafeWithBeans();
+        withBeans();
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
@@ -17,18 +25,11 @@ public class CafeTest {
         Assert.assertEquals("Wrong amount of beans in coffee", Cafe.ESPRESSO_BEANS_SINGLE_SHOT, coffee.getBeans());
         Assert.assertEquals("Wrong type of coffee", CoffeeType.Espresso, coffee.getType());
     }
-
-    private Cafe cafeWithBeans() {
-        Cafe cafe = new Cafe();
-        cafe.restockBeans(Cafe.ESPRESSO_BEANS_SINGLE_SHOT);
-        return cafe;
-    }
-
     @Test
     public void brewingEspressoConsumesBeans(){
 
         //given
-        Cafe cafe = cafeWithBeans();
+        withBeans();
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
@@ -42,11 +43,15 @@ public class CafeTest {
     public void latteRequiresMilk(){
 
         //given
-        Cafe cafe = cafeWithBeans();
+        withBeans();
         //cafe.restockMilk(7);
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Latte);
+    }
+
+    private void withBeans() {
+        cafe.restockBeans(Cafe.ESPRESSO_BEANS_SINGLE_SHOT);
     }
 
 
