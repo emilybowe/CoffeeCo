@@ -14,9 +14,9 @@ public class CafeTest {
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
 
         //then
-        Assert.assertEquals(0, coffee.getMilk());
-        Assert.assertEquals(Cafe.ESPRESSO_BEANS_SINGLE_SHOT, coffee.getBeans());
-        Assert.assertEquals(CoffeeType.Espresso, coffee.getType());
+        Assert.assertEquals("Wrong amount of milk in coffee",Cafe.NO_MILK, coffee.getMilk());
+        Assert.assertEquals("Wrong amount of beans in coffee", Cafe.ESPRESSO_BEANS_SINGLE_SHOT, coffee.getBeans());
+        Assert.assertEquals("Wrong type of coffee", CoffeeType.Espresso, coffee.getType());
     }
 
     @Test
@@ -30,7 +30,7 @@ public class CafeTest {
         Coffee coffee = cafe.Brew(CoffeeType.Espresso);
 
         //then
-        Assert.assertEquals(0, cafe.beansStock);
+        Assert.assertEquals("Wrong amount of beans in stock", Cafe.NO_ESPRESSO_BEANS, cafe.beansStock);
     }
 
     //then
@@ -44,8 +44,6 @@ public class CafeTest {
 
         //when
         Coffee coffee = cafe.Brew(CoffeeType.Latte);
-
-
     }
 
 

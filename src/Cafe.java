@@ -4,6 +4,8 @@ public class Cafe {
     public static int milkStock;
     static final int MILK_SINGLE_SHOT = 7;
     static final int ESPRESSO_BEANS_SINGLE_SHOT = 7;
+    static final int NO_MILK = 0;
+    static final int NO_ESPRESSO_BEANS = 0;
     public void restockBeans(int moreBeans){
         beansStock += moreBeans;
     }
